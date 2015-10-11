@@ -16,7 +16,7 @@ function loadXMLDoc() {
 //			document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
 		}
 		else {
-//			document.getElementById("myDiv").innerHTML= 'No Data';
+			document.getElementById("myDiv").innerHTML= 'No Data';
 // Only for debugging. Otherwise it will show until the xml loads.
 		}
 	}
