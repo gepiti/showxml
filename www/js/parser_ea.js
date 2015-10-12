@@ -38,7 +38,7 @@ function ea_readxmldata (txt) {
 		xmlDoc.loadXML(txt);
 	  }
   
-	var data2show = '';
+	var data2show = '<h1>';
 	
 	for (i=0;i < xmlDoc.getElementsByTagName("data").length;i++) {
 
@@ -56,5 +56,6 @@ function ea_readxmldata (txt) {
 		}
 		data2show = data2show + ' ' + text + '---';
 	}
+	data2show = data2show + '</h1>';
 	return data2show;
  }
