@@ -1,5 +1,4 @@
 
-
 function loadXMLDoc() {
 	var xmlhttp;
 	if (window.XMLHttpRequest) 	{
