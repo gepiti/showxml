@@ -1,28 +1,29 @@
 
+
 function loadXMLDoc() {
-	var req = new XMLHttpRequest();
-	req.open('GET', 'http://212.71.233.203/data/test.xml', true);
-	req.send();
-
-	req.onreadystatechange = function() {
-		if (req.readyState == 4) {
-			if( (req.status == 200) || (req.status == 0) ) {
-
-				//alert(req.responseText.length);
-				alert(req.responseText);
-				if(req.responseText.length > 0) {
-					var result2show = readxmldata(req.responseText);
-					document.getElementById("myDiv").innerHTML=result2show;
-				}
-				else {
-					document.getElementById("myDiv").innerHTML= 'No Data';
-				}
-			}
-			else {
-				alert("Error talking to server");
-			}
+	var xmlhttp;
+	if (window.XMLHttpRequest) 	{
+// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+	}
+	else {
+// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function() {
+		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+			var result2show = readxmldata(xmlhttp.responseText);
+			document.getElementById("myDiv").innerHTML=result2show;
+//			document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		}
+		else {
+			document.getElementById("myDiv").innerHTML= 'No Data';
+// Only for debugging. Otherwise it will show until the xml loads.
 		}
 	}
+	xmlhttp.open("POST","http://212.71.233.203/data/test.xml",true);
+	
+	xmlhttp.send();
 }
 
 function readxmldata (txt) {
