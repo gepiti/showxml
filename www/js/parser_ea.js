@@ -54,8 +54,8 @@ function ea_readxmldata (txt) {
 		if (txt !== null) {
 			data2show = data2show + '<h1>' + txt + '</h1>';
 		}
-		data2show = data2show + ' <h2> + text + '</h2>';
+		data2show = data2show + '<h2'> + text + '</h2>';
 	}
-	data2show = data2show;
+
 	return data2show;
  }
