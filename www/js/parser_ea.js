@@ -38,7 +38,7 @@ function ea_readxmldata (txt) {
 		xmlDoc.loadXML(txt);
 	  }
   
-	var data2show = '<h1>';
+	var data2show = '';
 	
 	for (i=0;i < xmlDoc.getElementsByTagName("data").length;i++) {
 
@@ -52,10 +52,10 @@ function ea_readxmldata (txt) {
 //		var data_attribute = datacontent.getAttributeNode("data");
 	
 		if (txt !== null) {
-			data2show = data2show + txt;
+			data2show = data2show + '<h1>' + txt + '</h1>';
 		}
-		data2show = data2show + ' ' + text + '---';
+		data2show = data2show + ' <h2> + text + '</h2>';
 	}
-	data2show = data2show + '</h1>';
+	data2show = data2show;
 	return data2show;
  }
